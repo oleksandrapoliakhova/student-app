@@ -1,6 +1,13 @@
 package com.studentapp.studentapp.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
@@ -9,19 +16,18 @@ import java.util.Date;
  * state, postal_code, phone_number, matriculation_date, notes
  */
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class Student {
+@Table(name = "STUDENT")
+public class Student extends Person {
 
-    private Long studentID;
-    private String studentFirstName;
-    private String studentLastName;
-    private String studentGender;
-    private String studentEmail;
-    private String studentAddress;
-    private String studentState;
-    private Long studentPostalCode;
-    private Long studentPhoneNumber;
+    @Column(name = "matriculation_date")
     private Date studentMatrDate;
+
+    @Column(name = "notes")
     private String studentNotes;
 
 }

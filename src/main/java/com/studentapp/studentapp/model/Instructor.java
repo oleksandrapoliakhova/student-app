@@ -1,24 +1,29 @@
 package com.studentapp.studentapp.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * Instructor POJO
- * db values: id, first_name, last_name, gender, education, email, address, state, postal_code, phone_number
+ * db values: id, first_name, last_name, gender, education, email,
+ * address, state, postal_code, phone_number
  */
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class Instructor {
+@Table(name = "INSTRUCTOR")
+public class Instructor extends Person {
 
-    private Long instructorID;
-    private String instructorFirstName;
-    private String instructorLastName;
-    private String instructorGender;
+    @Column(name = "education")
     private String instructorEducation;
-    private String instructorEmail;
-    private String instructorAddress;
-    private String instructorState;
-    private Long instructorPostalCode;
-    private Long studentPhoneNumber;
 
 }
