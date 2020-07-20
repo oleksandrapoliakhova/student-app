@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
+import java.util.Set;
 
 /**
  * Student POJO
@@ -23,6 +24,8 @@ import java.util.Date;
 @Entity
 @Table(name = "STUDENT")
 public class Student extends Person {
+
+    Set<Course> studentCources;
 
     @Column(name = "matriculation_date")
     private Date studentMatrDate;
